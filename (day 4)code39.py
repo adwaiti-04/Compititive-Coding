@@ -1,0 +1,24 @@
+#function
+def msg(): #called function
+    val1 = int(input("Enter first value:"))
+    val2 = int(input("Enter second value:"))
+    print(val1+val2)
+
+msg() #calling function
+res = msg()
+print("Result =", res)
+
+
+#function
+def msg(): #called function
+    val1 = int(input("Enter first value:"))
+    val2 = int(input("Enter second value:"))
+    sum = val1=val2
+    mul = val1 * val2
+    sub = val1 - val2
+    div = val1 * val2
+    return sum, mul, sub, div
+
+msg() #calling function
+res = msg()
+print("Result =", res)
