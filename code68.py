@@ -1,3 +1,21 @@
-init_tuple_a = 'a', 'b'
-init_tuple_b = ('a', 'b')
-print(init_tuple_a == init_tuple_b)
+class Solution:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        dummy = ListNode()   # Dummy node to simplify edge cases
+        tail = dummy
+        
+        while list1 and list2:
+            if list1.val < list2.val:
+                tail.next = list1
+                list1 = list1.next
+            else:
+                tail.next = list2
+                list2 = list2.next
+            tail = tail.next
+        
+        # Attach the remaining nodes
+        if list1:
+            tail.next = list1
+        else:
+            tail.next = list2
+        
+        return dummy.next
